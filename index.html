@@ -69,14 +69,23 @@
     <section class="main__completed">
       <h3 class="completed__title">Completed</h3>
       <ul class="completed__list">
-        
+        <li class="completed__item">
+          <input class="completed__checkbox" type="checkbox" checked/>
+          <label class="completed__label">See the Doctor</label>
+          <input class="completed__input" type="text"/>
+          <button class="completed__button completed__button--edit">Edit</button>
+          <button class="completed__button completed__button--delete">
+            <img
+              class="completed__icon"
+              src="./remove.svg"
+              alt="Label with cross for deleting"/>
+          </button>
+        </li>
       </ul>
     </section>
+  </main>
 
-<li><input type="checkbox" checked><label class="task">See the Doctor</label><input type="text" class="task"><button class="edit">Edit</button><button class="delete"><img src="./remove.svg"></button>
-</li>
-</ul>
-</div>
+
 <script type="text/javascript" SRC="app.js"></script>
 </body>
 </html>
