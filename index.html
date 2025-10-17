@@ -29,15 +29,27 @@
           <input
             id="add-task-input"
             class="add-task__input"
-            type="text"
-          />
+            type="text"/>
         <button class="add-task__button" type="submit">Add</button>
       </form>
     </section>
     <section class="main__todo">
       <h3 class="todo__title">Todo</h3>
       <ul class="todo__list todo__list--incomplete">
-        <li class="todo_item">
+        <li class="todo__item">
+          <input class="todo__checkbox" type="checkbox"/>
+          <label class="todo__label">Pay Bills</label>
+          <input class="todo__input" type="text"/>
+          <button class="todo__button todo__button--edit">Edit</button>
+          <button class="todo__button todo__button--delete">
+            <img
+              class="todo__icon"
+              src="./remove.svg"
+              alt="Label with cross for deleting"/>
+          </button>
+        </li>
+
+        <li class="todo__item todo__item--edit-mode">
           <input class="todo__checkbox" type="checkbox"/>
           <label class="todo__label">Pay Bills</label>
           <input class="todo__input" type="text"/>
