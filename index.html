@@ -22,7 +22,7 @@
     </a>
   </header>
   <main class="main">
-    <section class="main__add-task">
+    <section class="main__add-task add-task">
       <form class="add-task__form">
         <label class="add-task__label" for="add-task-input">Add Item</label>
         <div class="add-task__row">
@@ -31,6 +31,7 @@
             class="add-task__input"
             type="text"/>
         <button class="add-task__button" type="submit">Add</button>
+        </div>
       </form>
     </section>
     <section class="main__todo">
@@ -43,7 +44,7 @@
           <button class="todo__button todo__button--edit">Edit</button>
           <button class="todo__button todo__button--delete">
             <img
-              class="todo__icon"
+              class="todo__icon todo"
               src="./remove.svg"
               alt="Label with cross for deleting"/>
           </button>
@@ -66,7 +67,7 @@
         </li>
       </ul>
     </section>
-    <section class="main__completed">
+    <section class="main__completed completed">
       <h3 class="completed__title">Completed</h3>
       <ul class="completed__list">
         <li class="completed__item">
