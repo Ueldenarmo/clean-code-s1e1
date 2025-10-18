@@ -1,3 +1,8 @@
+:root {
+  --text-color: #333;
+  --button-color: #888;
+}
+
 /* Basic Style */
 body {
     background-color: #f8f8f8;
