@@ -1,14 +1,20 @@
+/* Basic Style */
 :root {
   --text-color: #333333;
   --button-color: #888888;
 }
 
-/* Basic Style */
 body {
   background-color: #f8f8f8;
   color: var(--text-color);
   font-family: Lato, sans-serif;
   margin: 0;
+}
+
+/* Layout */
+.main {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .aaa {
