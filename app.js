@@ -128,19 +128,22 @@ const convertToTodoTask = function (listItem) {
   icon.classList.add('todo__icon');
 };
 
-var editTask=function(){
-    console.log("Edit Task...");
-    console.log("Change 'edit' to 'save'");
+const addTask = function (event) {
+  console.log('Add Task...');
+  if (event) {
+    event.preventDefault();
+  }
 
+  ajaxRequest();
 
-    var listItem=this.parentNode;
-
-    var editInput=listItem.querySelector('input[type=text]');
-    var label=listItem.querySelector("label");
-    var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("editMode");
-    //If class of the parent is .editmode
-    if(containsClass){
+   if (!taskInput.value) {
+    return;
+  }
+  const listItem = createNewTaskElement(taskInput.value);
+  incompleteTaskHolder.appendChild(listItem);
+  bindTaskEvents(listItem, taskCompleted);
+  taskInput.value = '';
+};
 
         //switch to .editmode
         //label becomes the inputs value.
