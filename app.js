@@ -237,26 +237,26 @@ const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
     checkBox.onchange = checkBoxEventHandler;
   }
 };
+
 taskForm.addEventListener('submit', addTask);
 
-//cycle over incompleteTaskHolder ul list items
-//for each list item
-for (var i=0; i<incompleteTaskHolder.children.length;i++){
-
-    //bind events to list items chldren(tasksCompleted)
-    bindTaskEvents(incompleteTaskHolder.children[i],taskCompleted);
+// cycle over incompleteTaskHolder ul list items
+for (let i = 0; i < incompleteTaskHolder.children.length; i += 1) {
+  const listItem = incompleteTaskHolder.children[i];
+  if (listItem.classList.contains('todo__item--edit-mode')) {
+    const input = listItem.querySelector('.todo__input');
+    if (input) {
+      input.classList.remove('todo__input--hidden');
+    }
+  }
+  bindTaskEvents(listItem, taskCompleted);
 }
 
-
-
-
-//cycle over completedTasksHolder ul list items
-for (var i=0; i<completedTasksHolder.children.length;i++){
-    //bind events to list items chldren(tasksIncompleted)
-    bindTaskEvents(completedTasksHolder.children[i],taskIncomplete);
+// cycle over completedTasksHolder ul list items
+for (let i = 0; i < completedTasksHolder.children.length; i += 1) {
+  const listItem = completedTasksHolder.children[i];
+  bindTaskEvents(listItem, taskIncomplete);
 }
-
-
 
 
 // Issues with usability don't get seen until they are in front of a human tester.
