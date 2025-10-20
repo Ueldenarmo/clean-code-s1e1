@@ -24,8 +24,10 @@ const createNewTaskElement = function (taskString) {
   const label = document.createElement('label');
   label.innerText = taskString;
   label.className = 'todo__label';
-    //button.edit
-    var editButton=document.createElement("button");//edit button
+
+  const editInput = document.createElement('input');
+  editInput.type = 'text';
+  editInput.className = 'todo__input todo__input--hidden';
 
     //button.delete
     var deleteButton=document.createElement("button");//delete button
