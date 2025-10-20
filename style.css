@@ -16,7 +16,7 @@ body {
 .header {
   display: flex;
   flex-direction: column;
-  text-align: right;
+  max-width: 500px;
 }
 
 .header__picture {
@@ -30,6 +30,7 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
+  text-align: right;
 }
 
 /* Main general */
