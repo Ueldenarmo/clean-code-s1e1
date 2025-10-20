@@ -29,6 +29,10 @@ const createNewTaskElement = function (taskString) {
   editInput.type = 'text';
   editInput.className = 'todo__input todo__input--hidden';
 
+  const editButton = document.createElement('button');
+  editButton.innerText = 'Edit';
+  editButton.className = 'todo__button todo__button--edit';
+
     //button.delete
     var deleteButton=document.createElement("button");//delete button
     var deleteButtonImg=document.createElement("img");//delete button image
