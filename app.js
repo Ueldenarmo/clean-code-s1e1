@@ -215,14 +215,29 @@ const ajaxRequest = function () {
   console.log('AJAX Request');
 };
 
+const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
+  console.log('bind list item events');
+  const checkBox = taskListItem.querySelector('input[type=checkbox]');
+  const editButton = taskListItem.querySelector(
+    '.todo__button:not(.todo__button--delete), .completed__button:not(.completed__button--delete)'
+  );
+  const deleteButton = taskListItem.querySelector(
+    '.todo__button--delete, .completed__button--delete'
+  );
 
-    //Bind editTask to edit button.
-    editButton.onclick=editTask;
-    //Bind deleteTask to delete button.
-    deleteButton.onclick=deleteTask;
-    //Bind taskCompleted to checkBoxEventHandler.
-    checkBox.onchange=checkBoxEventHandler;
-}
+  if (editButton) {
+    editButton.onclick = editTask;
+  }
+
+  if (deleteButton) {
+    deleteButton.onclick = deleteTask;
+  }
+
+  if (checkBox) {
+    checkBox.onchange = checkBoxEventHandler;
+  }
+};
+taskForm.addEventListener('submit', addTask);
 
 //cycle over incompleteTaskHolder ul list items
 //for each list item
