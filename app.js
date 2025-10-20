@@ -181,18 +181,18 @@ const editTask = function () {
   listItem.classList.toggle(editModeClass);
 };
 
-
-//Delete task.
-var deleteTask=function(){
-    console.log("Delete Task...");
-
-    var listItem=this.parentNode;
-    var ul=listItem.parentNode;
-    //Remove the parent list item from the ul.
+// Delete task.
+const deleteTask = function () {
+  console.log('Delete Task...');
+  const listItem = this.closest('li');
+  if (!listItem) {
+    return;
+  }
+  const ul = listItem.parentNode;
+  if (ul) {
     ul.removeChild(listItem);
-
-}
-
+  }
+};
 
 //Mark task completed
 var taskCompleted=function(){
