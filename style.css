@@ -33,7 +33,7 @@ body {
   font-size: 16px;
 }
 
-/* Main Layout */
+/* Main general */
 .main {
   max-width: 500px;
   margin: 0 auto;
@@ -122,6 +122,12 @@ body {
   gap: 12px;
 }
 
+.todo__checkbox,
+.completed__checkbox {
+  margin: 0 10px 0 0;
+  flex: 0 0 auto;
+}
+
 /*@media (max-width:768px) {
 .aaa { text-align: center;
 }
@@ -148,9 +154,7 @@ li > * {
     vertical-align: middle;
 }
 
-li > input[type="checkbox"] {
-    margin: 0 10px;
-}
+
 li > label {
     padding-left: 10px;
     box-sizing: border-box;
