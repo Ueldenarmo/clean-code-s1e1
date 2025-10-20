@@ -9,7 +9,7 @@
 body {
   background-color: #f8f8f8;
   color: var(--text-color);
-  font-family: Lato, sans-serif;
+  font-family: var(--font-family);
   margin: 0;
 }
 
@@ -29,24 +29,16 @@ body {
 .header__picture {
   width: 100%;
   height: auto;
+  align-self: center;
 }
 
 .header__link {
+  font-family: var(--font-family-2);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
 }
 
-
-.aaa {
-    width: 500px;
-    margin: 0 auto;
-    display: block;
-    text-align: right;
-}
-.aaa img {
-    width: 100%;
-}
-.aaa .more_inf {
-    font-family: fantasy, cursive;
-}
 
 @media (max-width:768px) {
 .aaa { text-align: center;
