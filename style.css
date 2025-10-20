@@ -128,6 +128,21 @@ body {
   flex: 0 0 auto;
 }
 
+.todo__label,
+.completed__label {
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 45%;
+  flex: 0 0 45%;
+}
+
+.todo__input,
+.completed__input {
+  width: 45%;
+  flex: 0 0 45%;
+}
+
 /*@media (max-width:768px) {
 .aaa { text-align: center;
 }
@@ -150,20 +165,9 @@ input#new-task {
 }
 
 /* Task list */
-li > * {
-    vertical-align: middle;
-}
 
 
-li > label {
-    padding-left: 10px;
-    box-sizing: border-box;
-    font-size: 18px;
-    width: 226px;
-}
-li >    input[type="text"] {
-    width: 226px
-}
+
 button.delete img {
     height: 2em;
     transform: rotateZ(45deg);
