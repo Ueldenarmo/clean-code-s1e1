@@ -186,7 +186,21 @@ body {
 }
 
 
-/*@media (max-width:768px) {
-.aaa { text-align: center;
+@media (max-width:768px) {
+  .header {
+    text-align: center;
+  }
+
+  .todo__item,
+  .completed__item {
+    align-items: flex-start;
+  }
+
+  .todo__label,
+  .completed__label,
+  .todo__input,
+  .completed__input {
+    width: 100%;
+    flex: 1 1 auto;
+  }
 }
-}*/
