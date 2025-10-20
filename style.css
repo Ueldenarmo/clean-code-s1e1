@@ -86,6 +86,23 @@ body {
   outline: none;
 }
 
+.add-task__button {
+  background: none;
+  border: 0;
+  font-family: var(--font-family);
+  color: var(--button-color);
+  font-size: 15px;
+  width: 12%;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease-in;
+}
+
+.add-task__button:hover,
+.add-task__button:focus {
+  color: #3a3a3a;
+}
+
 /*@media (max-width:768px) {
 .aaa { text-align: center;
 }
@@ -105,24 +122,6 @@ ul {
 li, h3 {
     list-style:none;
 }
-input,button{
-    outline:none;
-}
-button {
-    background: none;
-    border: 0px;
-    color: #888;
-    font-size: 15px;
-    width: 60px;
-    font-family: Lato, sans-serif;
-    cursor: pointer;
-}
-button:hover {
-    color: #3a3A3a;
-}
-/* Heading */
-
-
 
 /* New Task */
 label[for='new-task'] {
