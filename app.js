@@ -17,12 +17,13 @@ const createNewTaskElement = function (taskString) {
   const listItem = document.createElement('li');
   listItem.className = 'todo__item';
 
-    //input (checkbox)
-    var checkBox=document.createElement("input");//checkbx
-    //label
-    var label=document.createElement("label");//label
-    //input (text)
-    var editInput=document.createElement("input");//text
+  const checkBox = document.createElement('input');
+  checkBox.type = 'checkbox';
+  checkBox.className = 'todo__checkbox';
+
+  const label = document.createElement('label');
+  label.innerText = taskString;
+  label.className = 'todo__label';
     //button.edit
     var editButton=document.createElement("button");//edit button
 
