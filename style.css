@@ -154,6 +154,18 @@ body {
   padding: 0;
 }
 
+.todo__icon,
+.completed__icon {
+  height: 2em;
+  transform: rotateZ(45deg);
+  transition: transform 200ms ease-in;
+}
+
+.todo__icon:hover,
+.completed__icon:hover {
+  transform: rotateZ(0);
+}
+
 
 /*@media (max-width:768px) {
 .aaa { text-align: center;
@@ -170,15 +182,6 @@ input#new-task {
     width: 318px;
 }
 
-/* Task list */
-button.delete img {
-    height: 2em;
-    transform: rotateZ(45deg);
-    transition: transform 200ms ease-in;
-}
-button.delete img:hover {
-    transform: rotateZ(0);
-}
 
 /* Completed */
 ul#completed-tasks label {
