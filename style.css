@@ -180,7 +180,7 @@ body {
   display: none;
 }
 
-.todo__item .todo__input {
+.todo__item .todo__input--hidden {
   display: none;
 }
 
