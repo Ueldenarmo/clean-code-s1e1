@@ -2,12 +2,13 @@
 :root {
   --text-color: #333333;
   --button-color: #888888;
+  --font-family: Lato, sans-serif;
 }
 
 body {
   background-color: #f8f8f8;
   color: var(--text-color);
-  font-family: Lato, sans-serif;
+  font-family: var(--font-family);
   margin: 0;
 }
 
@@ -28,6 +29,10 @@ body {
   width: 100%;
   height: auto;
 }
+
+.header__link {
+}
+
 
 .aaa {
     width: 500px;
