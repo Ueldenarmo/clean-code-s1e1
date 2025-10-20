@@ -3,12 +3,13 @@
   --text-color: #333333;
   --button-color: #888888;
   --font-family: Lato, sans-serif;
+  --font-family-2: 'IM Fell English', serif;
 }
 
 body {
   background-color: #f8f8f8;
   color: var(--text-color);
-  font-family: var(--font-family);
+  font-family: Lato, sans-serif;
   margin: 0;
 }
 
