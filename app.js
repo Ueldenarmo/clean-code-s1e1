@@ -8,10 +8,10 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-const taskInput = document.getElementById("add-task-input");
-const addButton = document.querySelector(".add-task__button");
-const incompleteTaskList = document.querySelector(".todo__list--incomplete");
-const completedTaskList = document.querySelector(".completed__list");
+var taskInput=document.getElementById("new-task");//Add a new task.
+var addButton=document.getElementsByTagName("button")[0];//first button
+var incompleteTaskHolder=document.getElementById("incompleteTasks");//ul of #incompleteTasks
+var completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
 
 
 //New task list item
