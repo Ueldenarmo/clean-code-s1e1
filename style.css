@@ -143,17 +143,23 @@ body {
   flex: 0 0 45%;
 }
 
+.todo__button,
+.completed__button {
+  background: none;
+  border: 0;
+  color: var(--button-color);
+  font-size: 15px;
+  width: 12%;
+  cursor: pointer;
+  padding: 0;
+}
+
+
 /*@media (max-width:768px) {
 .aaa { text-align: center;
 }
 }*/
 
-
-.task {
-    width: 56%;
-    display: inline-block;
-    flex-grow: 1
-}
 
 /* New Task */
 label[for='new-task'] {
@@ -165,9 +171,6 @@ input#new-task {
 }
 
 /* Task list */
-
-
-
 button.delete img {
     height: 2em;
     transform: rotateZ(45deg);
