@@ -3,7 +3,6 @@
   --text-color: #333333;
   --button-color: #888888;
   --font-family: Lato, sans-serif;
-  --font-family-2: 'IM Fell English', serif;
 }
 
 body {
@@ -27,7 +26,7 @@ body {
 }
 
 .header__link {
-  font-family: var(--font-family-2);
+  font-family: fantasy, cursive;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -137,8 +136,7 @@ body {
   flex: 0 0 45%;
 }
 
-.todo__input,
-.completed__input {
+.todo__input {
   width: 45%;
   flex: 0 0 45%;
 }
@@ -181,7 +179,21 @@ body {
 .todo__item--edit-mode .todo__label {
   display: none;
 }
+
 .todo__item .todo__input {
+  display: none;
+}
+
+.completed__item--edit-mode .completed__input {
+  display: inline-block;
+  width: 50%;
+}
+
+.completed__item--edit-mode .completed__label {
+  display: none;
+}
+
+.completed__item .completed__input {
   display: none;
 }
 
