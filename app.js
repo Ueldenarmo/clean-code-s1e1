@@ -139,23 +139,46 @@ const addTask = function (event) {
    if (!taskInput.value) {
     return;
   }
+
   const listItem = createNewTaskElement(taskInput.value);
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
   taskInput.value = '';
 };
 
-        //switch to .editmode
-        //label becomes the inputs value.
-        label.innerText=editInput.value;
-        editBtn.innerText="Edit";
-    }else{
-        editInput.value=label.innerText;
-        editBtn.innerText="Save";
-    }
+// Edit an existing task.
+const editTask = function () {
+  console.log('Edit Task...');
+  console.log("Change 'edit' to 'save'");
 
-    //toggle .editmode on the parent.
-    listItem.classList.toggle("editMode");
+  const listItem = this.closest('li');
+
+  const isTodoItem = listItem.classList.contains('todo__item');
+  const editModeClass = isTodoItem
+    ? 'todo__item--edit-mode'
+    : 'completed__item--edit-mode';
+  const label = listItem.querySelector(isTodoItem ? '.todo__label' : '.completed__label');
+  const editInput = listItem.querySelector(isTodoItem ? '.todo__input' : '.completed__input');
+  const editButton = listItem.querySelector(
+    '.todo__button:not(.todo__button--delete), .completed__button:not(.completed__button--delete)'
+  );
+  const containsClass = listItem.classList.contains(editModeClass);
+
+  if (containsClass) {
+    label.innerText = editInput.value;
+    editButton.innerText = 'Edit';
+    if (isTodoItem) {
+      editInput.classList.add('todo__input--hidden');
+    }
+  } else {
+    editInput.value = label.innerText;
+    editButton.innerText = 'Save';
+    if (isTodoItem) {
+      editInput.classList.remove('todo__input--hidden');
+    }
+  }
+
+  listItem.classList.toggle(editModeClass);
 };
 
 
