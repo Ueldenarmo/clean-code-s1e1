@@ -203,12 +203,17 @@ const taskCompleted = function () {
   bindTaskEvents(listItem, taskIncomplete);
 };
 
-var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
-    console.log("bind list item events");
-//select ListItems children
-    var checkBox=taskListItem.querySelector("input[type=checkbox]");
-    var editButton=taskListItem.querySelector("button.edit");
-    var deleteButton=taskListItem.querySelector("button.delete");
+const taskIncomplete = function () {
+  console.log('Incomplete Task...');
+  const listItem = this.closest('li');
+  convertToTodoTask(listItem);
+  incompleteTaskHolder.appendChild(listItem);
+  bindTaskEvents(listItem, taskCompleted);
+};
+
+const ajaxRequest = function () {
+  console.log('AJAX Request');
+};
 
 
     //Bind editTask to edit button.
