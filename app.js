@@ -12,11 +12,10 @@ const taskInput = document.getElementById('add-task-input');
 const incompleteTaskHolder = document.querySelector('.todo__list--incomplete');
 const completedTasksHolder = document.querySelector('.completed__list');
 
-
 //New task list item
-var createNewTaskElement=function(taskString){
-
-    var listItem=document.createElement("li");
+const createNewTaskElement = function (taskString) {
+  const listItem = document.createElement('li');
+  listItem.className = 'todo__item';
 
     //input (checkbox)
     var checkBox=document.createElement("input");//checkbx
