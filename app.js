@@ -33,34 +33,24 @@ const createNewTaskElement = function (taskString) {
   editButton.innerText = 'Edit';
   editButton.className = 'todo__button todo__button--edit';
 
-    //button.delete
-    var deleteButton=document.createElement("button");//delete button
-    var deleteButtonImg=document.createElement("img");//delete button image
+  const deleteButton = document.createElement('button');
+  deleteButton.className = 'todo__button todo__button--delete';
 
-    label.innerText=taskString;
-    label.className='task';
+  const deleteButtonImg = document.createElement('img');
+  deleteButtonImg.src = './remove.svg';
+  deleteButtonImg.alt = 'Label with cross for deleting';
+  deleteButtonImg.className = 'todo__icon';
 
-    //Each elements, needs appending
-    checkBox.type="checkbox";
-    editInput.type="text";
-    editInput.className="task";
+  deleteButton.appendChild(deleteButtonImg);
 
-    editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+  listItem.appendChild(checkBox);
+  listItem.appendChild(label);
+  listItem.appendChild(editInput);
+  listItem.appendChild(editButton);
+  listItem.appendChild(deleteButton);
 
-    deleteButton.className="delete";
-    deleteButtonImg.src='./remove.svg';
-    deleteButton.appendChild(deleteButtonImg);
-
-
-    //and appending.
-    listItem.appendChild(checkBox);
-    listItem.appendChild(label);
-    listItem.appendChild(editInput);
-    listItem.appendChild(editButton);
-    listItem.appendChild(deleteButton);
     return listItem;
-}
+};
 
 
 
