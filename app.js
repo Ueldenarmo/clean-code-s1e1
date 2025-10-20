@@ -52,23 +52,81 @@ const createNewTaskElement = function (taskString) {
     return listItem;
 };
 
+const convertToCompletedTask = function (listItem) {
+  listItem.classList.remove('todo__item', 'todo__item--edit-mode');
+  listItem.classList.add('completed__item');
+  listItem.classList.remove('completed__item--edit-mode');
 
+  const checkBox = listItem.querySelector('input[type=checkbox]');
+  const label = listItem.querySelector('label');
+  const editInput = listItem.querySelector('input[type=text]');
+  const editButton = listItem.querySelector(
+    '.todo__button:not(.todo__button--delete), .completed__button:not(.completed__button--delete)'
+  );
+  const deleteButton = listItem.querySelector(
+    '.todo__button--delete, .completed__button--delete'
+  );
+  const icon = listItem.querySelector('img');
 
-var addTask=function(){
-    console.log("Add Task...");
-    //Create a new list item with the text from the #new-task:
-    if (!taskInput.value) return;
-    var listItem=createNewTaskElement(taskInput.value);
+  checkBox.classList.remove('todo__checkbox');
+  checkBox.classList.add('completed__checkbox');
+  checkBox.checked = true;
 
-    //Append listItem to incompleteTaskHolder
-    incompleteTaskHolder.appendChild(listItem);
-    bindTaskEvents(listItem, taskCompleted);
+  label.classList.remove('todo__label');
+  label.classList.add('completed__label');
 
-    taskInput.value="";
+  editInput.classList.remove('todo__input', 'todo__input--hidden');
+  editInput.classList.add('completed__input');
+  editInput.value = label.innerText;
 
-}
+  editButton.classList.remove('todo__button', 'todo__button--edit', 'todo__button--save');
+  editButton.classList.add('completed__button', 'completed__button--edit');
+  editButton.innerText = 'Edit';
 
-//Edit an existing task.
+  deleteButton.classList.remove('todo__button', 'todo__button--delete');
+  deleteButton.classList.add('completed__button', 'completed__button--delete');
+
+  icon.classList.remove('todo__icon');
+  icon.classList.add('completed__icon');
+};
+
+const convertToTodoTask = function (listItem) {
+  listItem.classList.remove('completed__item', 'completed__item--edit-mode');
+  listItem.classList.add('todo__item');
+  listItem.classList.remove('todo__item--edit-mode');
+
+  const checkBox = listItem.querySelector('input[type=checkbox]');
+  const label = listItem.querySelector('label');
+  const editInput = listItem.querySelector('input[type=text]');
+  const editButton = listItem.querySelector(
+    '.todo__button:not(.todo__button--delete), .completed__button:not(.completed__button--delete)'
+  );
+  const deleteButton = listItem.querySelector(
+    '.todo__button--delete, .completed__button--delete'
+  );
+  const icon = listItem.querySelector('img');
+
+  checkBox.classList.remove('completed__checkbox');
+  checkBox.classList.add('todo__checkbox');
+  checkBox.checked = false;
+
+  label.classList.remove('completed__label');
+  label.classList.add('todo__label');
+
+  editInput.classList.remove('completed__input');
+  editInput.classList.add('todo__input', 'todo__input--hidden');
+  editInput.value = label.innerText;
+
+  editButton.classList.remove('completed__button', 'completed__button--edit', 'completed__button--save');
+  editButton.classList.add('todo__button', 'todo__button--edit');
+  editButton.innerText = 'Edit';
+
+  deleteButton.classList.remove('completed__button', 'completed__button--delete');
+  deleteButton.classList.add('todo__button', 'todo__button--delete');
+
+  icon.classList.remove('completed__icon');
+  icon.classList.add('todo__icon');
+};
 
 var editTask=function(){
     console.log("Edit Task...");
